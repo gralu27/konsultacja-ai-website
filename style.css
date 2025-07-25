@@ -507,6 +507,21 @@ nav a:hover {
   text-decoration: underline;
 }
 
+/* About photo styling */
+.about-photo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.about-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 /* Footer */
 footer {
   background-color: #f4eaf6;
