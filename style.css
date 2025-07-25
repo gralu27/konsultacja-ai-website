@@ -517,8 +517,10 @@ nav a:hover {
 .about-photo {
   width: 180px;
   height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
+    border-radius: 50%;
+    object-fit: cover;
+    /* Ensure the portrait photo is positioned toward the top to avoid cropping the head */
+    object-position: top center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
