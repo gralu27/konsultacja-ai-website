@@ -1,0 +1,549 @@
+/*
+ * Global styles and variables
+ *
+ * A muted purple palette is used throughout the site to echo the
+ * presentation contained in the provided PDF. Sections alternate between
+ * soft gradients and clean white backgrounds to provide visual rhythm.
+ */
+
+:root {
+  --primary: #5a004f;
+  --accent: #a32186;
+  --light-bg: #faf5fb;
+  --dark-text: #33192c;
+  --light-text: #ffffff;
+  --border-radius: 8px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--dark-text);
+  line-height: 1.6;
+  background-color: #ffffff;
+}
+
+h1, h2, h3, h4 {
+  margin: 0 0 0.5em;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+/* Layout helpers */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section {
+  padding: 80px 0;
+  position: relative;
+}
+
+.white-bg {
+  background-color: #ffffff;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #faf5fb 0%, #f4eaf6 50%, #ffffff 100%);
+}
+
+/* Navigation */
+header {
+  background-color: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* Hero */
+#hero {
+  height: 100vh;
+  background-image: url('hero.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--light-text);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+#hero .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+#hero .hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+#hero h1 {
+  font-size: 3.2rem;
+  margin-bottom: 0.2em;
+  color: var(--light-text);
+}
+
+#hero .tagline {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  color: #d4b8d8;
+}
+
+#hero h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--light-text);
+}
+
+#hero .subtitle {
+  font-size: 1rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  color: #e7dce3;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.primary-btn {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+.primary-btn:hover {
+  background-color: #881c70;
+}
+
+/* About section */
+#about h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.about-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.about-number {
+  width: 48px;
+  height: 48px;
+  background-color: var(--accent);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0 50%);
+}
+
+.about-item p {
+  font-size: 0.95rem;
+}
+
+/* Why AI section */
+#why .why-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#why .why-text {
+  flex: 1;
+}
+
+#why .quote {
+  font-style: italic;
+  color: var(--primary);
+  margin-top: 1rem;
+}
+
+#why .why-points {
+  flex: 1;
+}
+
+#why ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#why li {
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 24px;
+}
+
+#why li::before {
+  content: '\f522';
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+}
+
+@media (min-width: 768px) {
+  #why .why-container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  #why .why-text, #why .why-points {
+    flex: 1;
+  }
+}
+
+/* Who section */
+#who .who-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#who .who-note {
+  margin-top: 1rem;
+}
+
+#who .note {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+#who ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#who li {
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 24px;
+}
+
+#who li::before {
+  content: '\f0a9';
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+@media (min-width: 768px) {
+  #who .who-container {
+    flex-direction: row;
+  }
+  #who .who-text {
+    flex: 2;
+  }
+  #who .who-note {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Packages */
+#packages h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+#packages .section-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 1rem;
+  color: var(--primary);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.card .price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.card ul {
+  list-style: none;
+  padding-left: 0;
+  flex-grow: 1;
+}
+
+.card li {
+  margin-bottom: 0.6rem;
+  position: relative;
+  padding-left: 20px;
+  font-size: 0.9rem;
+}
+
+.card li::before {
+  content: '\f00c';
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  color: var(--accent);
+}
+
+/* Benefits */
+#benefits h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.benefit-item {
+  text-align: center;
+  padding: 1rem;
+}
+
+.benefit-item i {
+  font-size: 2.5rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.benefit-item h4 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.benefit-item p {
+  font-size: 0.9rem;
+}
+
+/* Testimonials */
+#testimonials h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary);
+}
+
+.testimonials-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.testimonial {
+  background-color: #ffffff;
+  border-left: 4px solid var(--accent);
+  padding: 1.5rem 1.5rem 1.5rem 2rem;
+  margin-bottom: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-text {
+  font-style: italic;
+  margin-bottom: 0.8rem;
+}
+
+.testimonial-author {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Contact */
+#contact h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#contact .section-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary);
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.contact-btn {
+  background-color: var(--accent);
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #881c70;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+.contact-item i {
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+
+.contact-item a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background-color: #f4eaf6;
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--primary);
+}
+
+/* Override bullet icons for the why and who lists to avoid reliance on icon fonts */
+#why li::before,
+#who li::before {
+  content: '▹';
+  font-family: inherit;
+}
+
+/* Replace card list bullets with a simple tick mark to ensure consistent
+   rendering regardless of icon font availability. */
+.card li::before {
+  content: '✓';
+  font-family: inherit;
+  color: var(--accent);
+  font-weight: 700;
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+}
+
+/* Responsive adjustments */
+@media (min-width: 992px) {
+  #hero h1 {
+    font-size: 4rem;
+  }
+  #hero h2 {
+    font-size: 2.4rem;
+  }
+  #hero .tagline {
+    font-size: 1.4rem;
+  }
+}
